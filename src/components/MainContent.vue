@@ -11,27 +11,56 @@
         <v-col cols="4">
           <div class="widget">
             <p>Total Employees</p>
-            <h2>150 <span class="green">+50</span></h2>
-            <p>Full-time Employee</p>
-            <h2>50 <span class="orange">+10</span></h2>
-            <p>Freelance Employee</p>
+            <div class="d-inline-flex align-center mt-2 md-2" style="background-color: lightgreen;">
+            <div class="mx-2"><span class="font-weight-medium">150 </span><span class="green">+50</span></div>
+            <div class="mx-2">Full-Time Employees</div>
+            </div>
+            <div class="d-inline-flex align-center mt-2 md-2" style="background-color:#FFCC99">
+            <div class="mx-2"><span class="font-weight-medium">50 </span><span class="orange">+10</span></div>
+            <div class="mx-2">Freelance Employees</div>
+        </div>
           </div>
         </v-col>
         <v-col cols="4">
           <div class="widget">
-            <p>Attendance Overview</p>
-            <h2>90% <span class="green">+20%</span></h2>
-            <p>since last month</p>
-            <p>Sick Leave | Day Off | On Time</p>
+            <v-card class="pa-4" flat style="background-color: inherit;">
+                 <v-card-title class="text-h6">Attendance Overview</v-card-title> 
+                 <v-card-subtitle class="text-h4">90%<span class="text-subtitle-2 green--text">↑ 20% since last month</span> </v-card-subtitle> 
+                 <v-row class="mt-4">
+                    <v-col cols="4"> 
+                        <v-chip color="yellow" label>Sick Leave</v-chip> 
+                    </v-col>
+                    <v-col cols="4"> <v-chip color="blue" label>Day Off</v-chip> 
+                    </v-col>
+                    <v-col cols="4">
+                        <v-chip color="purple" label>On time</v-chip> 
+                    </v-col> 
+                </v-row>
+                <v-progress-linear
+                    color="purple"
+                    model-value="15"
+                    ></v-progress-linear>
+            </v-card>
           </div>
         </v-col>
         <v-col cols="4">
           <div class="widget">
             <p>Today Used Devices</p>
             <h2>100 Overall</h2>
-            <p>80 Macbook</p>
-            <p>13 Keyboard</p>
-            <p>07 Headphones</p>
+            <v-row>
+                <v-col cols="auto">                
+                <v-progress-circular
+                color="brown"
+                model-value="60"
+                size="80"
+                ></v-progress-circular>
+                </v-col>
+                <v-col cols="auto">
+                    <p>80 Macbook</p>
+                    <p>13 Keyboard</p>
+                    <p>07 Headphones</p>
+                </v-col>
+            </v-row>
           </div>
         </v-col>
       </v-row>
@@ -54,7 +83,6 @@
             <h2>May 2024: <span class="bold">$2,198.11</span></h2>
             <p>Income | <span class="bold">$733.43</span> Expense</p>
             <div class="chart-placeholder">
-              <!-- Replace this with your chart -->
               <p>[Chart Placeholder]</p>
             </div>
           </div>
@@ -178,6 +206,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
+    margin:16px;
     height: 100%;
   }
   
@@ -223,5 +252,6 @@
   }
   .small-label .v-label.v-field-label
   { font-size: 11px !important; }
+
   </style>
   
