@@ -51,4 +51,7 @@ export default {
         margin-left:250px;
     }
 }
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the vertical scrollbar */
+}
 </style>
