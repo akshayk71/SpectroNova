@@ -3,7 +3,7 @@
     <!-- Header -->
      <Header></Header>
       <div class="content-header">
-        <h1>Good Morning, Turja Sen</h1>
+        <span class="text-h5 font-weight-medium">Good Morning, Turja Sen</span>
       </div>
   
       <!-- Top Widgets -->
@@ -296,6 +296,7 @@
 }
   
 .content-header {
+    margin-top: 20px;
     margin-bottom: 20px;
 }
   
