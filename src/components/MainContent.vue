@@ -39,6 +39,7 @@
                 <v-progress-linear
                     color="purple"
                     model-value="15"
+                    class="mt-5"
                     ></v-progress-linear>
             </v-card>
           </div>
@@ -70,11 +71,77 @@
         <v-col cols="6">
           <div class="widget">
             <p>Employee Performance Ratings</p>
-            <h2>98%</h2>
-            <p>At Tur Agency, we're proud of our employees' punctuality and quality work.</p>
-            <p>Ahsan Tapadar <span class="blue">Task: 35</span></p>
-            <p>Koyes Ahmed <span class="blue">Task: 30</span></p>
-            <p>Washi Bin M. <span class="blue">Task: 25</span></p>
+            <p><span class="text-h6 font-weight-medium">98%</span>At Tur Agency, we're proud of our employees' punctuality and quality work.
+            </p>
+            <v-row>
+                <v-col cols="3">
+                    Ahsan Tapadar 
+                </v-col>
+                <v-col cols=3></v-col>
+                <v-col cols="6">
+                    <v-progress-linear
+                        color="purple"
+                        model-value="35"
+                        >
+                    </v-progress-linear>
+                </v-col>
+            </v-row>
+
+            <v-row>
+                <v-col cols="3">
+                    Koyes Ahmed 
+                </v-col>
+                <v-col cols=3></v-col>
+                <v-col cols="6">
+                    <v-progress-linear
+                        color="blue"
+                        model-value="30"
+                        >
+                    </v-progress-linear>
+                </v-col>
+            </v-row>
+
+            <v-row>
+                <v-col cols="3">
+                    Washi Bin M.
+                </v-col>
+                <v-col cols=3></v-col>
+                <v-col cols="6">
+                    <v-progress-linear
+                        color="green"
+                        model-value="25"
+                        >
+                    </v-progress-linear>
+                </v-col>
+            </v-row>
+
+            <v-row>
+                <v-col cols="3">
+                    Mir Muhsin 
+                </v-col>
+                <v-col cols=3></v-col>
+                <v-col cols="6">
+                    <v-progress-linear
+                        color="red"
+                        model-value="45"
+                        >
+                    </v-progress-linear>
+                </v-col>
+            </v-row>
+
+            <v-row>
+                <v-col cols="3">
+                    Turja Sen Das
+                </v-col>
+                <v-col cols=3></v-col>
+                <v-col cols="6">
+                    <v-progress-linear
+                        color="amber"
+                        model-value="33"
+                        >
+                    </v-progress-linear>
+                </v-col>
+            </v-row>
           </div>
         </v-col>
         <v-col cols="6">
@@ -91,7 +158,7 @@
   
       <!-- Employee List -->
       <div class="employee-list">
-        <v-card>
+        <v-card flat>
           <v-row>
             <v-col cols="2">
                 <span class="text-h6 font-weight-medium">All Employees</span>
@@ -206,7 +273,6 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
-    margin:16px;
     height: 100%;
   }
   
