@@ -1,6 +1,7 @@
 <template>
     <div class="main-content">
-      <!-- Header -->
+    <!-- Header -->
+     <Header></Header>
       <div class="content-header">
         <h1>Good Morning, Turja Sen</h1>
       </div>
@@ -64,25 +65,32 @@
       <div class="employee-list">
         <v-card>
           <v-row>
-            <!-- <div>
-                <v-sheet class="d-flex mb-6 bg-surface-variant">
-                <v-sheet class="ma-2 pa-2 me-auto">Flex item</v-sheet>
-                <v-sheet class="ma-2 pa-2">Flex item</v-sheet>
-                <v-sheet class="ma-2 pa-2">Flex item</v-sheet>
-                </v-sheet>
-            </div> -->
             <v-col cols="2">
                 <span class="text-h6 font-weight-medium">All Employees</span>
             </v-col>
             <v-col cols="1"></v-col>
             <v-col>
-              <v-text-field class="small-label" label="Search Employess" dense outlined></v-text-field>
+              <v-text-field 
+                class="small-label" 
+                label="Search Employess"   
+                color="primary"
+                variant="outlined"
+                dense></v-text-field>
             </v-col>
             <v-col>
-              <v-select class="small-label" label="All status" dense outlined :items="['All Status', 'Full-time', 'Freelance']"><v-label>All Status</v-label></v-select>
+              <v-select 
+                class="small-label"
+                label="All status"
+                color="primary"
+                variant="outlined"
+                dense outlined :items="['All Status', 'Full-time', 'Freelance']"><v-label>All Status</v-label></v-select>
             </v-col>
             <v-col>
-              <v-select label="All Roles" dense outlined :items="['All Roles', 'UI Designer', 'Product Designer']"></v-select>
+              <v-select label="All Roles" 
+              color="primary"
+              variant="outlined"
+              dense
+              :items="['All Roles', 'UI Designer', 'Product Designer']"></v-select>
             </v-col>
             <v-col>
               <v-btn block color="primary">Export</v-btn>
@@ -140,14 +148,17 @@
             </tbody>
           </v-table>
         </v-card>
-        <button class="export-button">EXPORT</button>
       </div>
     </div>
   </template>
   
   <script>
+  import Header from './Header.vue';
   export default {
     name: "MainContent",
+    components: {
+        Header
+    }
   };
   </script>
   

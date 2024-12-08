@@ -1,16 +1,8 @@
 <template>
-    <v-navigation-drawer app permanent class="sidebar">
+    <v-navigation-drawer app class="sidebar">
       <!-- Logo and Profile -->
       <v-list-item>
         <v-icon class="me-2">mdi-theater</v-icon> <span class="text-h6 font-weight-medium">TurHR</span>
-        <!-- <template v-slot:prepend>
-            <v-icon class="me-2">mdi-theater</v-icon>
-        </template>
-        <v-list-item-title >Turi HR</v-list-item-title> -->
-        <!-- <v-list-item-content>
-          <v-img width="300px" src="../assets/TuriHRLogo.png" alt="dmdmr"></v-img>
-          <span class="text-h5">TurHR</span>
-        </v-list-item-content> -->
       </v-list-item>
   
       <!-- Navigation Items -->

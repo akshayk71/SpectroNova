@@ -1,14 +1,41 @@
 <template>
-    <header class="items-center justify-between p-4 bg-white shadow" style="display:inline">
-      <input
-        type="text"
-        placeholder="Quick Search..."
-        class="border p-2 rounded w-1/3"
-      />
-        <button class="mx-2">🔔</button>
-        <v-avatar>
-            <img src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=300" alt="User Avatar" class="w-8 h-8 rounded-full" />
-        </v-avatar>
-    </header>
-</template>
+    <v-card>
+      <v-row justify="space-between">
+        <v-col cols="6">
+             <span class="text-h6 font-weight-medium" style="padding-left:20px; padding-top:20px;">Dashboard</span>
+        </v-col>
+        <v-col cols="3">
+          <v-text-field
+            label="Quick Search"
+            color="primary"
+            prepend-icon="mdi-magnify"
+            class="small-label"
+            variant="outlined"
+          ></v-text-field>
+          </v-col>
+          <v-col cols="3">
+          <v-btn icon>
+            <v-icon>mdi-email</v-icon>
+          </v-btn>
+          <v-avatar-group>
+            <v-avatar>
+                <v-icon icon="mdi-account" />
+            </v-avatar>
+            <v-avatar>
+                <v-icon icon="mdi-account" />
+            </v-avatar>
+            <v-avatar>
+                <v-icon icon="mdi-account" />
+            </v-avatar>
+        </v-avatar-group>
+          <v-btn>Invite</v-btn>
+        </v-col>
+      </v-row>
+    </v-card>
+  </template>
+  
+  <script>
+  export default {};
+  </script>
+
   
