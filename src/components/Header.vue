@@ -11,6 +11,7 @@
             prepend-icon="mdi-magnify"
             class="small-label"
             variant="outlined"
+            density="compact"
           ></v-text-field>
           </v-col>
           <v-col cols="3">

@@ -28,7 +28,7 @@
                  <v-card-subtitle class="text-h4">90%<span class="text-subtitle-2 green--text">↑ 20% since last month</span> </v-card-subtitle> 
                  <v-row class="mt-4">
                     <v-col cols="4"> 
-                        <v-chip color="yellow" label>Sick Leave</v-chip> 
+                        <v-chip color="amber-lighten-3" label>Sick Leave</v-chip> 
                     </v-col>
                     <v-col cols="4"> <v-chip color="blue" label>Day Off</v-chip> 
                     </v-col>
@@ -149,9 +149,7 @@
             <p>Income Statistics</p>
             <h2>May 2024: <span class="bold">$2,198.11</span></h2>
             <p>Income | <span class="bold">$733.43</span> Expense</p>
-            <div class="chart-placeholder">
-              <p>[Chart Placeholder]</p>
-            </div>
+                <BarChart :data="chartData" />
           </div>
         </v-col>
       </v-row>
@@ -170,6 +168,7 @@
                 label="Search Employess"   
                 color="primary"
                 variant="outlined"
+                density="compact"
                 dense></v-text-field>
             </v-col>
             <v-col>
@@ -178,17 +177,21 @@
                 label="All status"
                 color="primary"
                 variant="outlined"
-                dense outlined :items="['All Status', 'Full-time', 'Freelance']"><v-label>All Status</v-label></v-select>
+                dense 
+                density="compact"
+                outlined 
+                :items="['All Status', 'Full-time', 'Freelance']"><v-label>All Status</v-label></v-select>
             </v-col>
             <v-col>
               <v-select label="All Roles" 
               color="primary"
               variant="outlined"
               dense
+              density="compact"
               :items="['All Roles', 'UI Designer', 'Product Designer']"></v-select>
             </v-col>
             <v-col>
-              <v-btn block color="primary">Export</v-btn>
+              <v-btn block>Export</v-btn>
             </v-col>
           </v-row>
           <v-table fixed-header hover>
@@ -249,75 +252,110 @@
   
   <script>
   import Header from './Header.vue';
+  import { Bar } from 'vue-chartjs'
+  import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
   export default {
     name: "MainContent",
     components: {
-        Header
+        Header,
+        BarChart: Bar
+    },
+    data () {
+    return {
+      chartData: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'], // months
+        datasets: [
+          {
+            label: 'Income',
+            data: [1000, 1200, 1100, 1300, 1400, 1200, 1500, 1600, 1700, 1800, 1900], // Income data
+            backgroundColor: 'rgba(75, 192, 192, 0.6)', // bar color for income
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          },
+          {
+            label: 'Expense',
+            data: [800, 900, 850, 950, 1100, 1000, 1200, 1300, 1400, 1350, 1450], // Expense data
+            backgroundColor: 'rgba(255, 99, 132, 0.6)', // bar color for expense
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }
+        ]
+      }
     }
+  }
   };
-  </script>
+</script>
   
-  <style scoped>
-  .main-content {
+<style scoped>
+.main-content {
     padding: 20px;
     background-color: #fff;
-  }
+}
   
-  .content-header {
+.content-header {
     margin-bottom: 20px;
-  }
+}
   
-  .top-widgets .widget,
-  .ratings-income .widget {
+.top-widgets .widget, .ratings-income .widget {
     background: #f7f8fa;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
     height: 100%;
-  }
+}
   
-  .widget h2 {
+.widget h2 {
     margin: 0;
-  }
+}
   
-  .widget .green {
+.widget .green {
     color: #28a745;
-  }
+}
   
-  .widget .orange {
+.widget .orange {
     color: #ffa500;
-  }
+}
   
-  .widget .blue {
+.widget .blue {
     color: #007bff;
-  }
+}
   
-  .chart-placeholder {
+.chart-placeholder {
     height: 100px;
     background: #e9ecef;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-  }
+}
   
-  .employee-list {
+.employee-list {
     margin-top: 20px;
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
-  }
+}
   
-  .export-button {
+.export-button {
     background-color: #007bff;
     color: white;
     padding: 10px 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  .small-label .v-label.v-field-label
-  { font-size: 11px !important; }
+}
+
+canvas {
+  max-width: 100%;
+  height: 400px;
+}
+
+.small-label .v-label.v-field-label { 
+    font-size: 11px !important; 
+}
 
   </style>
   
